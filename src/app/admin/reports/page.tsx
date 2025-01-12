@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Report } from '@/lib/db'
+import { Report } from '@/lib/sheets'
 
 export default function ReportsPage() {
   const [reports, setReports] = useState<Report[]>([])
@@ -67,9 +67,6 @@ export default function ReportsPage() {
                     <div className="text-sm">
                       {report.contactEmail && (
                         <p>Email: {report.contactEmail}</p>
-                      )}
-                      {report.contactPhone && (
-                        <p>Phone: {report.contactPhone}</p>
                       )}
                     </div>
                   </>

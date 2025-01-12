@@ -10,7 +10,7 @@ export default function Hero() {
         </h1>
         
         <div className="space-y-8">
-          <p className="text-xl black opacity-90 leading-relaxed">
+          <p className="text-xl opacity-90 leading-relaxed">
             Submit your report securely and anonymously. Your information will be handled with the utmost confidentiality 
             and reviewed by legal experts.
           </p>

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getReports } from '@/lib/db'
+import { getReports } from '@/lib/sheets'
 
 export async function GET(request: Request) {
   // Basic auth check
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const reports = getReports()
+    const reports = await getReports()
     return NextResponse.json({ reports })
   } catch (error) {
     console.error('Error fetching reports:', error)

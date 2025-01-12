@@ -10,6 +10,16 @@ A secure platform for UK public sector workers to report corruption and incompet
 - 📊 Google Sheets integration for easy report management
 - 🔐 Protected by Public Interest Disclosure Act 1998
 
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + DaisyUI
+- **Icons**: Lucide React
+- **Backend**: Google Sheets API
+- **Form Handling**: Native React Forms
+- **Development Tools**: ESLint, Prettier
+
 ## Getting Started
 
 ### Prerequisites

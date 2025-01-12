@@ -28,13 +28,16 @@ export default function ReportForm() {
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) throw new Error('Submission failed')
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Submission failed')
+      }
       
-      // Clear form and show success message
       e.currentTarget.reset()
       alert('Report submitted successfully')
-    } catch (error) {
-      alert('Failed to submit report. Please try again.')
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to submit report'
+      alert(message)
     } finally {
       setIsSubmitting(false)
     }
