@@ -33,10 +33,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# database
-/data
-*.json
-!package.json
-!package-lock.json
-!tsconfig.json

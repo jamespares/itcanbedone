@@ -17,7 +17,6 @@ export default function ReportForm() {
       description: formData.get('description'),
       isAnonymous: isAnonymous,
       contactEmail: formData.get('contactEmail'),
-      contactPhone: formData.get('contactPhone'),
     }
 
     try {
@@ -93,28 +92,15 @@ export default function ReportForm() {
       </div>
 
       {!isAnonymous && (
-        <div className="space-y-6">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Contact Email</span>
-            </label>
-            <input
-              type="email"
-              name="contactEmail"
-              className="input input-bordered w-full"
-            />
-          </div>
-
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Contact Phone</span>
-            </label>
-            <input
-              type="tel"
-              name="contactPhone"
-              className="input input-bordered w-full"
-            />
-          </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Contact Email</span>
+          </label>
+          <input
+            type="email"
+            name="contactEmail"
+            className="input input-bordered w-full"
+          />
         </div>
       )}
 

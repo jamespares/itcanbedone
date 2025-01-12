@@ -5,10 +5,10 @@ A secure platform for UK public sector workers to report corruption and incompet
 ## Features
 
 - 🔒 Secure, anonymous reporting system
-- 📝 Detailed submission form with optional contact information
-- 🎨 Modern, responsive design
-- 📊 Reports management system
-- 🖨️ Export capabilities (Download CSV)
+- 📝 Simple submission form with optional contact information
+- 🎨 Clean, focused design
+- 📊 Google Sheets integration for easy report management
+- 🔐 Protected by Public Interest Disclosure Act 1998
 
 ## Getting Started
 
@@ -16,12 +16,13 @@ A secure platform for UK public sector workers to report corruption and incompet
 
 - Node.js 18+ 
 - npm or yarn
+- Google Cloud Platform account
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/jamespares/itcanbedone.git
+git clone https://github.com/yourusername/itcanbedone.git
 cd itcanbedone
 ```
 
@@ -30,14 +31,17 @@ cd itcanbedone
 npm install
 ```
 
-3. Create a `.env.local` file in the root directory:
-```env
-NEXT_PUBLIC_ADMIN_PASSWORD=your-secure-password
-```
+3. Set up Google Sheets:
+   - Create a new Google Cloud Project
+   - Enable Google Sheets API
+   - Create a service account and download credentials
+   - Create a new Google Sheet and share it with your service account email
+   - Copy your Google Sheet ID from the URL
 
-4. Create the data directory:
-```bash
-mkdir data
+4. Create a `.env.local` file in the root directory:
+```env
+GOOGLE_SHEETS_CREDENTIALS={"type": "service_account", ...} # Your service account JSON
+GOOGLE_SHEETS_ID=your-spreadsheet-id
 ```
 
 5. Start the development server:
@@ -52,45 +56,29 @@ The application will be available at `http://localhost:3000`
 ```
 /src
   /app                    # Next.js 14 app directory
-    /admin               # Admin dashboard
-    /api                # API routes
+    /api                 # API routes for form submission
     /report             # Report submission page
   /components           # React components
-  /lib                  # Utilities and database handling
-/data                   # JSON database storage (gitignored)
+  /lib                  # Google Sheets integration
 ```
 
-## Key Components
+## Google Sheets Structure
 
-- `ReportForm`: Main form component for whistleblower submissions
-- `AdminPage`: Password-protected admin access
-- `ReportsPage`: Dashboard to view and manage submissions
-- `db.ts`: Local JSON database management
-
-## Database
-
-The application uses a simple JSON file-based database located in `/data/reports.json`. This file is automatically created when the first report is submitted.
-
-⚠️ Important: The `/data` directory is gitignored to protect sensitive information.
-
-## Security Considerations
-
-1. All reports are stored locally in the `/data` directory
-2. Admin access is protected by a password (set in `.env.local`)
-3. Anonymous submission option available
-4. No tracking or IP logging
+The connected Google Sheet should have the following columns:
+- Timestamp
+- Organization
+- Department
+- Description
+- Anonymous
+- Email (if provided)
 
 ## Development
 
-### Adding New Features
+### Adding New Fields
 
-1. Create new components in `/src/components`
-2. Add new pages in `/src/app` directory
-3. Extend database schema in `/src/lib/db.ts`
-
-### Modifying the Form
-
-Edit `src/components/ReportForm.tsx` to add or modify form fields.
+1. Update the form component in `src/components/ReportForm.tsx`
+2. Modify the Google Sheets integration in `src/lib/sheets.ts`
+3. Add new columns to your Google Sheet
 
 ### Styling
 
@@ -109,9 +97,9 @@ npm start
 ```
 
 Remember to:
-- Set up proper environment variables
-- Configure proper server security
-- Set up regular backups of the `/data` directory
+- Set up environment variables on your hosting platform
+- Ensure your Google Cloud Project is properly configured
+- Keep your service account credentials secure
 
 ## Contributing
 

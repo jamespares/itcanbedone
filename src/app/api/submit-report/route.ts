@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
-import { saveReport } from '@/lib/db'
+import { saveReport } from '@/lib/sheets'
 
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    const report = saveReport(data)
-    return NextResponse.json({ success: true, report })
+    await saveReport(data)
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Error submitting report:', error)
     return NextResponse.json(
