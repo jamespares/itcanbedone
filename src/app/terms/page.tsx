@@ -9,10 +9,18 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-base-100">
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
+        <h1 className="text-4xl font-bold mb-8 text-base-content">Terms of Service</h1>
 
-        <div className="prose prose-lg max-w-none">
-          <p className="text-base-content/80">Last updated: {new Date().toLocaleDateString()}</p>
+        <div
+          className="prose prose-lg max-w-none text-base-content 
+          prose-headings:text-base-content 
+          prose-p:text-base-content 
+          prose-li:text-base-content
+          prose-strong:text-base-content
+          prose-a:text-primary
+          prose-h3:text-base-content"
+        >
+          <p className="text-base-content">Last updated: {new Date().toLocaleDateString()}</p>
 
           <section className="mt-8">
             <h2>1. Acceptance of Terms</h2>

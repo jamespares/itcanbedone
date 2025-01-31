@@ -9,10 +9,18 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-base-100">
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+        <h1 className="text-4xl font-bold mb-8 text-base-content">Privacy Policy</h1>
 
-        <div className="prose prose-lg max-w-none">
-          <p className="text-base-content/80">Last updated: {new Date().toLocaleDateString()}</p>
+        <div
+          className="prose prose-lg max-w-none text-base-content 
+          prose-headings:text-base-content 
+          prose-p:text-base-content 
+          prose-li:text-base-content
+          prose-strong:text-base-content
+          prose-a:text-primary
+          prose-h3:text-base-content"
+        >
+          <p className="text-base-content">Last updated: {new Date().toLocaleDateString()}</p>
 
           <section className="mt-8">
             <h2>1. Introduction</h2>
@@ -114,7 +122,7 @@ export default function PrivacyPage() {
           <section className="mt-8">
             <h2>9. Cookies and Tracking</h2>
             <p>
-              We use essential cookies necessary for the Platform's operation. You can control
+              We use essential cookies necessary for the Platform&apos;s operation. You can control
               cookie preferences through your browser settings. We do not use tracking cookies or
               third-party analytics without explicit consent.
             </p>
@@ -124,7 +132,8 @@ export default function PrivacyPage() {
             <h2>10. Changes to Privacy Policy</h2>
             <p>
               We may update this privacy policy from time to time. We will notify you of any changes
-              by posting the new privacy policy on this page and updating the "Last updated" date.
+              by posting the new privacy policy on this page and updating the &quot;Last
+              updated&quot; date.
             </p>
           </section>
 

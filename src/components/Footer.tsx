@@ -60,9 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="footer footer-center p-4 border-t border-neutral-focus text-sm opacity-75">
-          <p>
-            &copy; {new Date().getFullYear()} Public Service Whistleblowers. All rights reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Common Sense UK. All rights reserved.</p>
         </div>
       </div>
     </footer>
