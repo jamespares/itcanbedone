@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | It Can Be Done',
-  description: 'Privacy Policy and data protection information for the It Can Be Done platform.',
+  title: 'Privacy Policy | Common Sense UK',
+  description: 'Privacy Policy and data protection information for the Blow the Whistle platform.',
 }
 
 export default function PrivacyPage() {
@@ -17,19 +17,21 @@ export default function PrivacyPage() {
           <section className="mt-8">
             <h2>1. Introduction</h2>
             <p>
-              At It Can Be Done, we take your privacy seriously. This Privacy Policy explains how we
-              collect, use, disclose, and safeguard your information when you use our Platform.
-              Please read this privacy policy carefully. If you do not agree with the terms of this
-              privacy policy, please do not access the Platform.
+              At Common Sense UK, we take your privacy seriously. This Privacy Policy explains how
+              we collect, use, disclose, and safeguard your information when you use our Blow the
+              Whistle platform (&ldquo;Platform&rdquo;). Please read this privacy policy carefully.
+              If you do not agree with the terms of this privacy policy, please do not access the
+              Platform.
             </p>
           </section>
 
           <section className="mt-8">
             <h2>2. Data Controller</h2>
             <p>
-              It Can Be Done (referred to as "we", "us", or "our") acts as the data controller for
-              the personal information collected through our Platform. You can contact our Data
-              Protection Officer at dpo@[domain].org.
+              Common Sense UK (referred to as &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+              &ldquo;our&rdquo;) acts as the data controller for the personal information collected
+              through our Platform. You can contact our Data Protection Officer at
+              dpo@commonsense.org.uk.
             </p>
           </section>
 
@@ -133,9 +135,11 @@ export default function PrivacyPage() {
               <br />
               Data Protection Officer
               <br />
-              Email: dpo@[domain].org
+              Common Sense UK
               <br />
-              Address: [Your Business Address]
+              Email: dpo@commonsense.org.uk
+              <br />
+              Address: [Common Sense UK Business Address]
               <br />
               You also have the right to lodge a complaint with your local data protection
               authority.

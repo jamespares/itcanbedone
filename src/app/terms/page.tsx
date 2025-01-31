@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | It Can Be Done',
-  description: 'Terms of Service and legal agreements for using the It Can Be Done platform.',
+  title: 'Terms of Service | Common Sense UK',
+  description: 'Terms of Service and legal agreements for using the Blow the Whistle platform.',
 }
 
 export default function TermsPage() {
@@ -17,9 +17,10 @@ export default function TermsPage() {
           <section className="mt-8">
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing and using the It Can Be Done platform ("Platform"), you agree to be bound
-              by these Terms of Service and all applicable laws and regulations. If you do not agree
-              with any of these terms, you are prohibited from using or accessing this Platform.
+              By accessing and using the Blow the Whistle platform (&ldquo;Platform&rdquo;), managed
+              by Common Sense UK, you agree to be bound by these Terms of Service and all applicable
+              laws and regulations. If you do not agree with any of these terms, you are prohibited
+              from using or accessing this Platform.
             </p>
           </section>
 
@@ -27,8 +28,9 @@ export default function TermsPage() {
             <h2>2. Reporting Service</h2>
             <p>
               Our Platform provides a secure channel for submitting reports about organizational
-              misconduct. We are committed to protecting whistleblowers and maintaining the
-              confidentiality of all reports submitted through our Platform.
+              misconduct in the UK public sector. Common Sense UK is committed to protecting
+              whistleblowers and maintaining the confidentiality of all reports submitted through
+              our Platform.
             </p>
           </section>
 
@@ -65,9 +67,9 @@ export default function TermsPage() {
           <section className="mt-8">
             <h2>6. Limitation of Liability</h2>
             <p>
-              To the fullest extent permitted by law, It Can Be Done shall not be liable for any
-              indirect, incidental, special, consequential, or punitive damages resulting from your
-              use or inability to use the Platform.
+              To the fullest extent permitted by law, Common Sense UK and the Blow the Whistle
+              platform shall not be liable for any indirect, incidental, special, consequential, or
+              punitive damages resulting from your use or inability to use the Platform.
             </p>
           </section>
 
@@ -85,9 +87,11 @@ export default function TermsPage() {
             <p>
               For questions about these Terms of Service, please contact us at:
               <br />
-              Email: legal@[domain].org
+              Common Sense UK Legal Department
               <br />
-              Address: [Your Business Address]
+              Email: legal@commonsense.org.uk
+              <br />
+              Address: [Common Sense UK Business Address]
             </p>
           </section>
         </div>

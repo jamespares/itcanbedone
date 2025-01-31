@@ -29,7 +29,8 @@ export default function CookieConsent() {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex-1">
           <p className="text-sm">
-            We use essential cookies to ensure the basic functionality of our platform. Read our{' '}
+            Common Sense UK uses essential cookies to ensure the basic functionality of the Blow the
+            Whistle platform. Read our{' '}
             <Link href="/privacy" className="link">
               Privacy Policy
             </Link>{' '}
