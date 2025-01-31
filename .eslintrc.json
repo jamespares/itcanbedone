@@ -1,3 +1,22 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/no-unescaped-entities": [
+      "error",
+      {
+        "forbid": [
+          {
+            "char": ">",
+            "alternatives": ["&gt;"]
+          },
+          {
+            "char": "}",
+            "alternatives": ["&#125;"]
+          }
+        ]
+      }
+    ]
+  }
 }

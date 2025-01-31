@@ -47,37 +47,37 @@ export default function ReportForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="form-control">
         <label className="label">
-          <span className="label-text">Organization Name*</span>
+          <span className="label-text font-medium text-base-content">Organization Name*</span>
         </label>
         <input
           type="text"
           name="organization"
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full bg-base-100 text-base-content"
           placeholder="e.g. NHS Trust, Local Council"
         />
       </div>
 
       <div className="form-control">
         <label className="label">
-          <span className="label-text">Department/Unit</span>
+          <span className="label-text font-medium text-base-content">Department/Unit</span>
         </label>
         <input
           type="text"
           name="department"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full bg-base-100 text-base-content"
           placeholder="e.g. Finance, Planning"
         />
       </div>
 
       <div className="form-control">
         <label className="label">
-          <span className="label-text">Description of Incident*</span>
+          <span className="label-text font-medium text-base-content">Description of Incident*</span>
         </label>
         <textarea
           name="description"
           required
-          className="textarea textarea-bordered h-32"
+          className="textarea textarea-bordered h-32 bg-base-100 text-base-content"
           placeholder="Please provide as much detail as possible about what you witnessed..."
         />
       </div>
@@ -90,24 +90,32 @@ export default function ReportForm() {
             checked={isAnonymous}
             onChange={e => setIsAnonymous(e.target.checked)}
           />
-          <span className="label-text">I wish to remain anonymous</span>
+          <span className="label-text text-base-content">I wish to remain anonymous</span>
         </label>
       </div>
 
       {!isAnonymous && (
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Contact Email</span>
+            <span className="label-text font-medium text-base-content">Contact Email</span>
           </label>
-          <input type="email" name="contactEmail" className="input input-bordered w-full" />
+          <input
+            type="email"
+            name="contactEmail"
+            className="input input-bordered w-full bg-base-100 text-base-content"
+          />
         </div>
       )}
 
-      <button type="submit" className="btn btn-primary w-full" disabled={isSubmitting}>
+      <button
+        type="submit"
+        className="btn btn-primary w-full text-primary-content font-medium"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? 'Submitting...' : 'Submit Report'}
       </button>
 
-      <p className="text-sm text-neutral/60">* Required fields</p>
+      <p className="text-sm text-base-content/60">* Required fields</p>
     </form>
   )
 }

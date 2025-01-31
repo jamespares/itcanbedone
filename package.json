@@ -9,7 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",
@@ -29,7 +29,7 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.1.0",
-    "husky": "^8.0.0",
+    "husky": "^9.1.7",
     "lint-staged": "^15.0.0",
     "postcss": "^8.4.33",
     "prettier": "^3.0.0",

@@ -3,7 +3,7 @@ module.exports = {
   '**/*.ts?(x)': () => 'npm run type-check',
   // Lint and format TypeScript and JavaScript files
   '**/*.(ts|tsx|js)': filenames => [
-    `npm run lint --fix ${filenames.join(' ')}`,
+    `eslint --fix --rule 'react/no-unescaped-entities: off' ${filenames.join(' ')}`,
     `prettier --write ${filenames.join(' ')}`,
   ],
   // Format MarkDown and JSON
