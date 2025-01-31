@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Public Service Whistleblowers - Speak Truth to Power',
+  title: 'Common Sense UK - Blow the Whistle on Public Sector Corruption',
   description:
-    'A secure platform for UK public sector workers to report corruption and incompetence while protecting whistleblowers.',
+    'A secure platform for UK public sector workers to report corruption and incompetence.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
