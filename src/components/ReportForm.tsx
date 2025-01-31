@@ -20,7 +20,7 @@ export default function ReportForm() {
     }
 
     try {
-      const response = await fetch('/api/submit-report', {
+      const response = await fetch('/api/reports', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default function ReportForm() {
         const errorData = await response.json()
         throw new Error(errorData.error || 'Submission failed')
       }
-      
+
       e.currentTarget.reset()
       alert('Report submitted successfully')
     } catch (err: unknown) {
@@ -88,7 +88,7 @@ export default function ReportForm() {
             type="checkbox"
             className="checkbox"
             checked={isAnonymous}
-            onChange={(e) => setIsAnonymous(e.target.checked)}
+            onChange={e => setIsAnonymous(e.target.checked)}
           />
           <span className="label-text">I wish to remain anonymous</span>
         </label>
@@ -99,25 +99,15 @@ export default function ReportForm() {
           <label className="label">
             <span className="label-text">Contact Email</span>
           </label>
-          <input
-            type="email"
-            name="contactEmail"
-            className="input input-bordered w-full"
-          />
+          <input type="email" name="contactEmail" className="input input-bordered w-full" />
         </div>
       )}
 
-      <button
-        type="submit"
-        className="btn btn-primary w-full"
-        disabled={isSubmitting}
-      >
+      <button type="submit" className="btn btn-primary w-full" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit Report'}
       </button>
 
-      <p className="text-sm text-neutral/60">
-        * Required fields
-      </p>
+      <p className="text-sm text-neutral/60">* Required fields</p>
     </form>
   )
-} 
+}

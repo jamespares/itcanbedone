@@ -8,8 +8,8 @@ export default function ReportPage() {
           <div className="card-body">
             <h1 className="text-3xl font-bold mb-6">Submit Your Report</h1>
             <p className="mb-8 text-neutral/80">
-              Your report will be encrypted and handled with the utmost confidentiality. 
-              You can choose to remain anonymous or provide contact details.
+              Your report will be encrypted and handled with the utmost confidentiality. You can
+              choose to remain anonymous or provide contact details.
             </p>
             <ReportForm />
           </div>
@@ -17,4 +17,4 @@ export default function ReportPage() {
       </div>
     </div>
   )
-} 
+}

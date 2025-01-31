@@ -6,55 +6,58 @@ A secure platform for UK public sector workers to report corruption and incompet
 
 - 🔒 Secure, anonymous reporting system
 - 📝 Simple submission form with optional contact information
-- 🎨 Clean, focused design
-- 📊 Google Sheets integration for easy report management
-- 🔐 Protected by Public Interest Disclosure Act 1998
+- 🤝 Network building for public sector reform
+- 🛡️ Legal protection information
+- 🎯 Clear, focused user experience
 
 ## Tech Stack
 
 - **Framework**: Next.js 14
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + DaisyUI
+- **Database**: Supabase
 - **Icons**: Lucide React
-- **Backend**: Google Sheets API
 - **Form Handling**: Native React Forms
-- **Development Tools**: ESLint, Prettier
+- **Development Tools**: ESLint, Prettier, Husky
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
-- Google Cloud Platform account
+- Node.js 18+
+- npm
+- Supabase account
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/itcanbedone.git
 cd itcanbedone
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. Set up Google Sheets:
-   - Create a new Google Cloud Project
-   - Enable Google Sheets API
-   - Create a service account and download credentials
-   - Create a new Google Sheet and share it with your service account email
-   - Copy your Google Sheet ID from the URL
+3. Set up Supabase:
 
-4. Create a `.env.local` file in the root directory:
+   - Create a new Supabase project
+   - Create the required tables using the schema in `src/types/database.ts`
+   - Copy your project URL and anon key
+
+4. Create a `.env.local` file:
+
 ```env
-GOOGLE_SHEETS_CREDENTIALS={"type": "service_account", ...} # Your service account JSON
-GOOGLE_SHEETS_ID=your-spreadsheet-id
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 5. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -65,59 +68,84 @@ The application will be available at `http://localhost:3000`
 
 ```
 /src
-  /app                    # Next.js 14 app directory
-    /api                 # API routes for form submission
-    /report             # Report submission page
-  /components           # React components
-  /lib                  # Google Sheets integration
+  /app                      # Next.js 14 app directory
+    /api                    # API routes
+      /join-network        # Network membership endpoint
+      /reports            # Report submission endpoint
+    /join                 # Join network page
+    /report              # Report submission page
+  /components             # React components
+  /lib                    # Supabase client
+  /types                  # TypeScript definitions
 ```
 
-## Google Sheets Structure
+## Database Schema
 
-The connected Google Sheet should have the following columns:
-- Timestamp
-- Organization
-- Department
-- Description
-- Anonymous
-- Email (if provided)
+The application uses two main tables:
+
+### Reports Table
+
+```sql
+create table reports (
+  id uuid default uuid_generate_v4() primary key,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  organization text not null,
+  department text,
+  description text not null,
+  is_anonymous boolean not null default false,
+  contact_email text
+);
+```
+
+### Network Members Table
+
+```sql
+create table network_members (
+  id uuid default uuid_generate_v4() primary key,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  name text not null,
+  email text,
+  twitter_handle text
+);
+```
 
 ## Development
 
-### Adding New Fields
+The project includes:
 
-1. Update the form component in `src/components/ReportForm.tsx`
-2. Modify the Google Sheets integration in `src/lib/sheets.ts`
-3. Add new columns to your Google Sheet
+- Pre-commit hooks for code quality
+- TypeScript for type safety
+- ESLint for code linting
+- Prettier for code formatting
 
-### Styling
+### Commands
 
-The project uses Tailwind CSS with DaisyUI components. Theme configuration is in `tailwind.config.ts`.
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+- `npm run format`: Format code with Prettier
+- `npm run type-check`: Run TypeScript checks
 
 ## Deployment
 
 1. Build the application:
+
 ```bash
 npm run build
 ```
 
 2. Start the production server:
+
 ```bash
 npm start
 ```
 
 Remember to:
+
 - Set up environment variables on your hosting platform
-- Ensure your Google Cloud Project is properly configured
-- Keep your service account credentials secure
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+- Configure Supabase access and security rules
+- Regularly backup your database
 
 ## License
 
